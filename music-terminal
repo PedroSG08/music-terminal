@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Lanzador de Music Terminal — cliente de YouTube Music para terminal."""
+import os
+import sys
+
+# realpath: soporta ser llamado vía symlink (p. ej. ~/.local/bin/music-terminal)
+sys.path.insert(0, os.path.dirname(os.path.realpath(__file__)))
+
+from music_terminal.main import main  # noqa: E402
+
+if __name__ == "__main__":
+    try:
+        sys.exit(main())
+    except KeyboardInterrupt:
+        sys.exit(130)
